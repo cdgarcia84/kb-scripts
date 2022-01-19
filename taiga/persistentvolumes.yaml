@@ -1,0 +1,101 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv-taiga-db
+  namespace: taiga
+spec:
+  storageClassName: storage-nfs-pv-taiga-db
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 10.1.17.189
+    path: "/kuber/taiga/db"
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv-taiga-back-static
+  namespace: taiga
+spec:
+  storageClassName: storage-nfs-pv-back-static
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 10.1.17.189
+    path: "/kuber/taiga/back/static"
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv-taiga-back-media
+  namespace: taiga
+spec:
+  storageClassName: storage-nfs-pv-back-media
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 10.1.17.189
+    path: "/kuber/taiga/back/media"
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv-taiga-async
+  namespace: taiga
+spec:
+  storageClassName: storage-nfs-pv-async
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 10.1.17.189
+    path: "/kuber/taiga/async"
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv-taiga-events
+  namespace: taiga
+spec:
+  storageClassName: storage-nfs-pv-events
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 10.1.17.189
+    path: "/kuber/taiga/events"
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv-taiga-gateway
+  namespace: taiga
+spec:
+  storageClassName: storage-nfs-pv-gateway
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 10.1.17.189
+    path: "/kuber/taiga/gateway"
+
+---
